@@ -1,13 +1,16 @@
 package uh.ac.cr;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Author {
     private int id;
     private String nombreAutor;
     private String primerApellidoAutor;
     private String segundoApellidoAutor;
-    private String fechaDeNacimiento;
+    private Date fechaDeNacimiento;
 
-    public Author(int id, String nombreAutor, String primerApellidoAutor, String segundoApellidoAutor, String fechaDeNacimiento) {
+    public Author(int id, String nombreAutor, String primerApellidoAutor, String segundoApellidoAutor, Date fechaDeNacimiento) {
         this.id = id;
         this.nombreAutor = nombreAutor;
         this.primerApellidoAutor = primerApellidoAutor;
@@ -47,12 +50,25 @@ public class Author {
         this.segundoApellidoAutor = segundoApellidoAutor;
     }
 
-    public String getFechaDeNacimiento() {
+    public Date getFechaDeNacimiento() {
         return fechaDeNacimiento;
     }
 
-    public void setFechaDeNacimiento(String fechaDeNacimiento) {
+    public void setFechaDeNacimiento(Date fechaDeNacimiento) {
         this.fechaDeNacimiento = fechaDeNacimiento;
+    }
+
+    @Override
+    public String toString() {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        String fecha = format.format(fechaDeNacimiento);
+        return "Author{" +
+                "id=" + id +
+                ", nombreAutor='" + nombreAutor + '\'' +
+                ", primerApellidoAutor='" + primerApellidoAutor + '\'' +
+                ", segundoApellidoAutor='" + segundoApellidoAutor + '\'' +
+                ", fechaDeNacimiento='" + fecha + '\'' +
+                '}';
     }
 }
 

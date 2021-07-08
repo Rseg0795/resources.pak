@@ -16,12 +16,12 @@ public class Book {
         this.copias = copias;
     }
 
-    public Book (String author, String editorial) {
+    public Book (Author author, Editorial editorial) {
         Author = author;
         Editorial = editorial;
     }
 
-    public Book(int id, String author, int edicion, String title, String editorial, int copias) {
+    public Book(int id, Author author, int edicion, String title, Editorial editorial, int copias) {
         Id = id;
         Author = author;
         Edicion = edicion;
