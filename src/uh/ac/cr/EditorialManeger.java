@@ -59,25 +59,25 @@ public class EditorialManeger {
         String Location;
         String phone;
 
-        System.out.println("Agregar editorial");
+        System.out.println("add editorial");
 
-        System.out.println("Ingrese ID de editorial");
+        System.out.println("Insert editorial ID");
         Id = scanner.nextInt();
         scanner.nextLine();
 
-        System.out.println("Ingrese nombre de editorial");
+        System.out.println("Insert editorial name");
         Name = scanner.nextLine();
 
-        System.out.println("Ingrese localizacion de editorial");
+        System.out.println("Insert editorial Location");
         Location = scanner.nextLine();
 
-        System.out.println("Ingrese numer de telefono de editorial");
+        System.out.println("Insert editorial phone");
         phone = scanner.nextLine();
 
         if (GenerateEditorial(Id, Name, Location, phone))
-            System.out.println("Editorial con ID: " + Id + " agregado exitosaente");
+            System.out.println("Editorial ID: " + Id + "add successfully");
         else
-            System.out.println("Editorial con ID: " + Id + " no fue agregado. ID ya existe");
+            System.out.println("Editorial ID: " + Id + " ID already exists try another one");
     }
 
 
@@ -98,7 +98,7 @@ public class EditorialManeger {
     public void EditorialShower(){
         Scanner scanner = new Scanner(System.in);
         int EditorialId;
-        System.out.println("Insert the identification of the editorial.");
+        System.out.println("Insert the ID of the editorial.");
         EditorialId = scanner.nextInt();
         scanner.nextLine();
         Editorial editorial = this.FindEditorial(EditorialId);
@@ -109,7 +109,7 @@ public class EditorialManeger {
     }
 
 
-    //this method is used to get an editorial from the list with the Editorial ID
+
     public Editorial FindEditorial(int EditorialId) {
         Editorial editorial = null;
         boolean found = false;
@@ -137,13 +137,13 @@ public class EditorialManeger {
     public void EditorialDeleter(){
         Scanner scanner = new Scanner(System.in);
         int EditorialID;
-        System.out.println("Insert the identification of the editorial to delete.");
+        System.out.println("Insert ID of editorial to delete.");
         EditorialID = scanner.nextInt();
         scanner.nextLine();
         if (this.DeleteEditorial(EditorialID))
-            System.out.println("Editorial eliminado exitosamente.");
+            System.out.println("Deleted successfully.");
         else
-            System.out.println("ID del editorial ingresado no existe.");
+            System.out.println("Editorial ID does not exist .");
     }
 
 

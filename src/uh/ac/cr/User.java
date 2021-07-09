@@ -2,14 +2,14 @@ package uh.ac.cr;
 
 public class User {
 
-    private int id;
+    private int ID;
     private String nombreUsuario;
     private String primerApellidoUsuario;
     private String segundoApellidoUsuario;
     private String telefonoDeContacto;
 
     public User(int id, String nombreUsuario, String primerApellidoUsuario, String segundoApellidoUsuario, String telefonoDeContacto) {
-        this.id = id;
+        this.ID = id;
         this.nombreUsuario = nombreUsuario;
         this.primerApellidoUsuario = primerApellidoUsuario;
         this.segundoApellidoUsuario = segundoApellidoUsuario;
@@ -17,11 +17,11 @@ public class User {
     }
 
     public int getId() {
-        return id;
+        return ID;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.ID = ID;
     }
 
     public String getNombreUsuario() {
