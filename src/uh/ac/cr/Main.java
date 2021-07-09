@@ -49,100 +49,24 @@ public class Main {
 
                             switch (Option){
                                 case 1: {
-                                    int AutorId;
-                                    System.out.println("Create a new autor.");
-                                    System.out.println("Inserte the identification of the autor.");
-                                    AutorId = scanner.nextInt();
-
-
-                                    String nombreAutor;
-                                    System.out.println("Inserte the name of the autor.");
-                                    scanner.nextLine();
-                                    nombreAutor = scanner.nextLine();
-
-                                    System.out.println("Inserte el primer apellido del autor.");
-                                    String primerApellidoAutor = scanner.nextLine();
-
-                                    System.out.println("Inserte el segundo apellido del autor.");
-                                    String segundoApellidoAutor = scanner.nextLine();
-                                    //scanner.nextLine();
-
-                                    System.out.println("Inserte fecha de nacimiento del Autor. 'dia/mes/año'");
-                                    String fechaDeNacimiento = scanner.nextLine();
-                                    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                                    Date date = null;
-                                    try {
-                                        date = format.parse(fechaDeNacimiento);
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    }
-                                    boolean autorcreado = administradorAutor.AuthorCreate(AutorId, nombreAutor, primerApellidoAutor, segundoApellidoAutor, date);
-                                    if (autorcreado) {
-                                        System.out.println("\nNew Autor created with Id: " + AutorId);
-                                    } else {
-                                        System.out.println("\nWe cannot create the patient since there is other Autor" +
-                                                " with the specified id: " + AutorId);
-                                    }
+                                    administradorAutor.AuthorCreator();
                                     break;
                                 }
                                 case 2: {
                                     //Get data from a specific Autor.
-                                    int AutorId;
-                                    System.out.println("Insert the identification of the autor.");
-                                    AutorId = scanner.nextInt();
-                                    scanner.nextLine();
-                                    Author autor = administradorAutor.FindAutor(AutorId);
-                                    if (autor != null)
-                                        System.out.println(autor.toString());
-                                    else
-                                        System.out.println("Author doesn't exist");
+                                    administradorAutor.AuthorFinder();
                                     break;
                                 }
                                 case 3: {
                                     //Update data related to a specific patient.
-                                    int AutorId;
-                                    System.out.println("update a new autor.");
-                                    System.out.println("Insert the identification of the autor.");
-                                    AutorId = scanner.nextInt();
-
-                                    System.out.println("Insert the name of the autor.");
-                                    scanner.nextLine();
-                                    String nombreAutor1 = scanner.nextLine();
-
-                                    System.out.println("Inserte el primer apellido del autor.");
-                                    String primerApellidoAutor1 = scanner.nextLine();
-
-                                    System.out.println("Inserte el segundo apellido del autor.");
-                                    String segundoApellidoAutor1 = scanner.nextLine();
-
-                                    System.out.println("Inserte fecha de nacimiento del Autor.");
-                                    String fechaDeNacimiento1 = scanner.nextLine();
-
-                                    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-                                    Date date = null;
-                                    try {
-                                        date = format.parse(fechaDeNacimiento1);
-                                    } catch (ParseException e) {
-                                        e.printStackTrace();
-                                    }
-                                    boolean Autorupdate = administradorAutor.updateAuthor(AutorId, nombreAutor1, primerApellidoAutor1, segundoApellidoAutor1, date);
-                                    if (Autorupdate) {
-                                        System.out.println("\nAutor updated with Id: " + AutorId);
-                                    } else {
-                                        System.out.println("\nWe cannot update the patient since there is other Autor" +
-                                                " with the specified id: " + AutorId);
-                                    }
+                                    administradorAutor.AuthorUpdater();
                                     break;
                                 }
                                 case 4:{
-                                    int AutorId;
-                                    System.out.println("Insert the identification of the author to delete.");
-                                    AutorId = scanner.nextInt();
-                                    administradorAutor.DeleteAuthor(AutorId);
+                                    administradorAutor.AuthorDeleter();
                                     break;
                                 }
                             }
-
                             break;
 
                     }

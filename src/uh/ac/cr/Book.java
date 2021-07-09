@@ -9,18 +9,6 @@ public class Book {
     private Editorial Editorial;
     private int copias;
 
-    public Book (int id, int edicion, String title, int copias) {
-        Id = id;
-        Edicion = edicion;
-        Title = title;
-        this.copias = copias;
-    }
-
-    public Book (Author author, Editorial editorial) {
-        Author = author;
-        Editorial = editorial;
-    }
-
     public Book(int id, Author author, int edicion, String title, Editorial editorial, int copias) {
         Id = id;
         Author = author;
@@ -28,6 +16,10 @@ public class Book {
         Title = title;
         Editorial = editorial;
         this.copias = copias;
+    }
+
+    public Book() {
+
     }
 
     public int getId() {
