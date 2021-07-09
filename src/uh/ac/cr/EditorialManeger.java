@@ -5,11 +5,17 @@ import java.util.Scanner;
 
 public class EditorialManeger {
     Scanner Datos=new Scanner(System.in);
-    private ArrayList<Editorial> listaEditorial = new ArrayList<>();
+    private ArrayList<Editorial> listaEditorial;
 
 
     public EditorialManeger(){
+        listaEditorial  = new ArrayList<>();
     }
+
+    public EditorialManeger(ArrayList<Editorial> listaEditorial) {
+        this.listaEditorial = listaEditorial;
+    }
+
     private void addlistEditorial(Editorial editorial) {
         listaEditorial.add(editorial);
     }

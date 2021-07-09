@@ -8,9 +8,14 @@ import java.util.Scanner;
 public class AuthorManager {
     Scanner Datos = new Scanner(System.in);
 
-    private ArrayList<Author> listaAutores = new ArrayList<>();
+    private ArrayList<Author> listaAutores;
 
     //add elements to array
+
+
+    public AuthorManager(ArrayList<Author> listaAutores) {
+        this.listaAutores = listaAutores;
+    }
 
     public AuthorManager() {
     }
@@ -168,6 +173,14 @@ public class AuthorManager {
         System.out.println("Insert the identification of the author to delete.");
         AutorId = scanner.nextInt();
         this.DeleteAuthor(AutorId);
+    }
+
+    public ArrayList<Author> getListaAutores() {
+        return listaAutores;
+    }
+
+    public void setListaAutores(ArrayList<Author> listaAutores) {
+        this.listaAutores = listaAutores;
     }
 };
 

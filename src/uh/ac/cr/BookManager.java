@@ -3,13 +3,18 @@ package uh.ac.cr;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class BookManager {
-    private ArrayList<Book> listaLibros = new ArrayList<>();
+    private ArrayList<Book> listaLibros;
 
     public BookManager() {
+        ArrayList<Book> listaLibros = new ArrayList<>();
     }
 
+    public BookManager(ArrayList<Book> listaLibros) {
+        this.listaLibros = listaLibros;
+    }
 
     private void addlistaLibros(Book book) {
         listaLibros.add(book);
@@ -39,22 +44,22 @@ public class BookManager {
         }
         return librocreado;
     }
-
-    public Boolean BookCreator(){
+    public void BookCreator(AuthorManager authorManager){
         Scanner scanner = new Scanner(System.in);
-        /*
-        Autores:
-        ID Nombre
-        12 Jose
-        1234 Diego
-        ...
-        Seleccione el ID:
-        12
-        Author autor = find(ID);
-        Editorial editorial = find(ID);
-         */
+        System.out.println("Lista de autores");
+        if (authorManager.getListaAutores().size() != 0){
+            for (Author a: authorManager.getListaAutores())
+                System.out.println("ID: "+ a.getId() + " Nombre autor: "+ a.getNombreAutor() + " " + a.getPrimerApellidoAutor());
+            System.out.println("Seleccione el ID de un autor: ");
+            int idAutor = scanner.nextInt();
+            scanner.nextLine();
+            Author autor = authorManager.FindAutor(idAutor);
+            if (autor != null)
+                System.out.println("Autor seleccionado" + autor.toString());
+        }
+        else
+            System.out.println("No hay autores disponibles");
 
-        return Boolean.TRUE;
     }
 
     //this method is used to get an author from the list with the Author ID

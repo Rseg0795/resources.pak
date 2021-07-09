@@ -4,12 +4,23 @@ import uh.ac.cr.Author;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        AuthorManager administradorAutor = new AuthorManager();
+        //Arreglos
+        ArrayList<Author> listaAutores = new ArrayList<>();
+        ArrayList<Book> listaLibros = new ArrayList<>();
+        ArrayList<Editorial> listaEditorial = new ArrayList<>();
+
+        //Managers
+        AuthorManager administradorAutor = new AuthorManager(listaAutores);
+        BookManager administradorLibros = new BookManager(listaLibros);
+        EditorialManeger administradorEditorial = new EditorialManeger(listaEditorial);
+
+
         Scanner scanner = new Scanner(System.in);
 
         boolean exit = false;
@@ -35,7 +46,7 @@ public class Main {
 
                     Option = scanner.nextInt();
 
-                    switch (Option){
+                    switch (Option) {
                         case 1:
 
                             System.out.println("\n---------------------------------------------------------------------\n");
@@ -47,7 +58,7 @@ public class Main {
 
                             Option = scanner.nextInt();
 
-                            switch (Option){
+                            switch (Option) {
                                 case 1: {
                                     administradorAutor.AuthorCreator();
                                     break;
@@ -62,15 +73,31 @@ public class Main {
                                     administradorAutor.AuthorUpdater();
                                     break;
                                 }
-                                case 4:{
+                                case 4: {
                                     administradorAutor.AuthorDeleter();
                                     break;
                                 }
                             }
                             break;
+                        case 3: {
+                            System.out.println("\n---------------------------------------------------------------------\n");
+                            System.out.println("\nCatàlogo de libro.");
+                            System.out.println("1-Ingresar un nuevo libro.");
+                            System.out.println("2-Consultar datos de un libro.");
+                            System.out.println("3-Eliminar un libro.");
+                            Option = scanner.nextInt();
+                            switch (Option) {
+                                case 1: {
+                                    administradorLibros.BookCreator(administradorAutor);
+                                    break;
+                                }
 
-                    }
-                    //System.out.println("Option selected: " + Option);
+                            }
+                            break;
+
+
+                        }
+                        //System.out.println("Option selected: " + Option);
 
 /*
 
@@ -79,10 +106,7 @@ public class Main {
                     System.out.println("6-Consultar datos de una editorial.");
                     System.out.println("7-Eliminar una editorial.");
 
-                System.out.println("\nCatàlogo de libro.");
-                System.out.println("8-Ingresar un nuevo libro.");
-                System.out.println("9-Consultar datos de un libro.");
-                System.out.println("10-Eliminar un libro.");
+
 
                 System.out.println("\nCatàlogo de usuario.");
                 System.out.println("11-Ingresar un nuevo usuario.");
@@ -97,6 +121,7 @@ public class Main {
 
 */
 
+                    }
             }
         }
     }
