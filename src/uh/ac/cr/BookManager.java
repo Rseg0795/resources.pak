@@ -64,50 +64,50 @@ public class BookManager {
             Editorial editorial;
             int copias;
 
-            System.out.println("Ingrese el ID del libro");
+            System.out.println("Insert the book`s ID ");
             idLibro = scanner.nextInt();
             scanner.nextLine();
 
             //Muestra autores
-            System.out.println("Lista de autores");
+            System.out.println("Author`s list");
             for (Author a: authorManager.getListaAutores())
-                System.out.println("ID: "+ a.getId() + " Nombre autor: "+ a.getNombreAutor() + " " + a.getPrimerApellidoAutor());
-            System.out.println("Seleccione el ID de un autor: ");
+                System.out.println("ID: "+ a.getId() + " Author`s name : "+ a.getNombreAutor() + " " + a.getPrimerApellidoAutor());
+            System.out.println("select author`s ID: ");
             int idAutor = scanner.nextInt();
             scanner.nextLine();
             autor = authorManager.FindAutor(idAutor);
             if (autor != null)
-                System.out.println("Autor seleccionado" + autor.toString());
+                System.out.println("Author selection" + autor.toString());
             System.out.println("\n-------------------\n");
 
-            System.out.println("Ingrese la edicion del libro");
+            System.out.println("books edition");
             Edicion = scanner.nextInt();
             scanner.nextLine();
 
-            System.out.println("Ingrese el titulo del libro");
+            System.out.println("books title");
             Title = scanner.nextLine();
 
             //Muestra editoriales
             for (Editorial e: editorialManager.getListaEditorial())
-                System.out.println("ID: "+ e.getId() +  " Nombre" + e.getName() + " Localizacion: "+ e.getLacation());
+                System.out.println("ID: "+ e.getId() +  " name" + e.getName() + " Location: "+ e.getLacation());
             int idEditorial = scanner.nextInt();
             scanner.nextLine();
 
             editorial = editorialManager.FindEditorial(idEditorial);
             if (editorial != null)
-                System.out.println("Editorial seleccionada" + editorial.toString());
+                System.out.println("Editorial selected" + editorial.toString());
 
-            System.out.println("Ingrese la cantidad de copias del libro");
+            System.out.println("enter the amount of books in stored");
             copias = scanner.nextInt();
             scanner.nextLine();
 
             if (this.BookCreate(idAutor, autor, Edicion, Title, editorial, copias))
-                System.out.println("Libro agregado correctamente");
+                System.out.println("book added successfully");
             else
-                System.out.println("ID del libro agregado ya existe. Libro no fue agregado.");
+                System.out.println("Books ID already exists, book was not added.");
         }
         else{
-            System.out.println("No hay autores o editoriales disponibles");
+            System.out.println("there are no available authors");
         }
     }
 
@@ -155,8 +155,8 @@ public class BookManager {
         System.out.println("Insert the identification of the book to delete.");
         BookID = scanner.nextInt();
         if (this.DeleteBook(BookID))
-            System.out.println("Libro eliminado exitosamente.");
+            System.out.println("book deleted successfully .");
         else
-            System.out.println("ID del libro ingresado no existe.");
+            System.out.println("Book`s ID does not exist.");
     }
 }

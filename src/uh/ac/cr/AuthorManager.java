@@ -53,24 +53,24 @@ public class AuthorManager {
     public void AuthorCreator(){
         Scanner scanner = new Scanner(System.in);
         int AutorId;
-        System.out.println("Create a new autor.");
-        System.out.println("Insert the identification of the autor.");
+        System.out.println("Create a new author.");
+        System.out.println("Insert the ID of the author.");
         AutorId = scanner.nextInt();
 
 
         String nombreAutor;
-        System.out.println("Insert the name of the autor.");
+        System.out.println("Insert the name of the author.");
         scanner.nextLine();
         nombreAutor = scanner.nextLine();
 
-        System.out.println("Inserte el primer apellido del autor.");
+        System.out.println("Insert the first lastname of the author.");
         String primerApellidoAutor = scanner.nextLine();
 
-        System.out.println("Inserte el segundo apellido del autor.");
+        System.out.println("Insert the second lastname of the author.");
         String segundoApellidoAutor = scanner.nextLine();
         //scanner.nextLine();
 
-        System.out.println("Inserte fecha de nacimiento del Autor. 'dia/mes/año'");
+        System.out.println("Insert the DOB of the Author. 'dia/mes/año'");
         String fechaDeNacimiento = scanner.nextLine();
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         Date date = null;
@@ -105,7 +105,7 @@ public class AuthorManager {
     public void AuthorFinder(){
         Scanner scanner = new Scanner(System.in);
         int AutorId;
-        System.out.println("Insert the identification of the autor.");
+        System.out.println("Insert the ID of the author.");
         AutorId = scanner.nextInt();
         scanner.nextLine();
         Author autor = this.FindAutor(AutorId);
@@ -126,21 +126,21 @@ public class AuthorManager {
     public void AuthorUpdater(){
         Scanner scanner = new Scanner(System.in);
         int AutorId;
-        System.out.println("update a new autor.");
-        System.out.println("Insert the identification of the autor.");
+        System.out.println("update a new author.");
+        System.out.println("Insert the identification of the author.");
         AutorId = scanner.nextInt();
 
-        System.out.println("Insert the name of the autor.");
+        System.out.println("Insert the name of the author.");
         scanner.nextLine();
         String nombreAutor1 = scanner.nextLine();
 
-        System.out.println("Inserte el primer apellido del autor.");
+        System.out.println("Insert el firts lastname of author.");
         String primerApellidoAutor1 = scanner.nextLine();
 
-        System.out.println("Inserte el segundo apellido del autor.");
+        System.out.println("Insert el second Last name of author.");
         String segundoApellidoAutor1 = scanner.nextLine();
 
-        System.out.println("Inserte fecha de nacimiento del Autor.");
+        System.out.println("Insert the DOB of the Author.");
         String fechaDeNacimiento1 = scanner.nextLine();
 
         SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -154,7 +154,7 @@ public class AuthorManager {
         if (Autorupdate) {
             System.out.println("\nAutor updated with Id: " + AutorId);
         } else {
-            System.out.println("\nWe cannot update the patient since there is other Autor" +
+            System.out.println("\nWe cannot update the Author since there is other Author" +
                     " with the specified id: " + AutorId);
         }
     }
@@ -170,7 +170,7 @@ public class AuthorManager {
     public void AuthorDeleter(){
         Scanner scanner = new Scanner(System.in);
         int AutorId;
-        System.out.println("Insert the identification of the author to delete.");
+        System.out.println("Insert the ID of the author to delete.");
         AutorId = scanner.nextInt();
         this.DeleteAuthor(AutorId);
     }
