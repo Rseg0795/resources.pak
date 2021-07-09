@@ -1,6 +1,9 @@
 package uh.ac.cr;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class UserManager {
@@ -26,10 +29,10 @@ public class UserManager {
         }
         return found;
     }
-    public boolean GenerateUser(int id, String  User  , String  primerApellidoUsuario, String segundoApellidoUsuario, String telefonoDeContacto) {
+    public boolean GenerateUser(int id, String  NombreUsuario  , String  primerApellidoUsuario, String segundoApellidoUsuario, String telefonoDeContacto) {
         boolean UserGenerated = false;
         if (!UserInList(id)) {
-            User UserGen = new User(id,  nombreUsuario, primerApellidoUsuario, segundoApellidoUsuario,telefonoDeContacto );
+            User UserGen = new User(id,  NombreUsuario, primerApellidoUsuario, segundoApellidoUsuario,telefonoDeContacto );
             this.addlistaLibros(UserGen);
             UserGenerated = true;
         }
@@ -66,7 +69,7 @@ public class UserManager {
         else
             System.out.println("User with ID: " + Id + " ID already exists try another one ");
 
-
+    }
         public User ShowUser(int UserID) {
             User US = null;
             boolean found = false;
@@ -93,7 +96,7 @@ public class UserManager {
             System.out.println("user doesn't exist");
     }
 
-    public void UserFinder(int UserID){
+    public User UserFinder(int UserID){
         User user = null;
         boolean found = false;
         int i = 0;
@@ -117,7 +120,7 @@ public class UserManager {
         return Boolean.FALSE;
     }
 
-    public void EditorialDeleter(){
+    public void UserDeleter(){
         Scanner scanner = new Scanner(System.in);
         int EditorialID;
         System.out.println("Insert user ID to delete.");
@@ -128,6 +131,51 @@ public class UserManager {
         else
             System.out.println("User ID does not exist.");
     }
+
+
+    public Boolean userUpdate(int id, String NombreUsuario, String primerApellidoUsuario, String segundoApellidoUsuario,String telefonoDeContacto) {
+        User user = UserFinder(id);
+        if (user == null)
+            return Boolean.FALSE;
+        DeleteUser(id);
+        GenerateUser(id,NombreUsuario,primerApellidoUsuario, segundoApellidoUsuario,telefonoDeContacto);
+        return Boolean.TRUE;
+    }
+    public void userUpdater(){
+        Scanner scanner = new Scanner(System.in);
+        int AutorId;
+        System.out.println("update a new author.");
+        System.out.println("Insert the identification of the author.");
+        AutorId = scanner.nextInt();
+
+        System.out.println("update name.");
+        scanner.nextLine();
+        String nombreAutor1 = scanner.nextLine();
+
+        System.out.println("update first lastname.");
+        String primerApellidoAutor1 = scanner.nextLine();
+
+        System.out.println("update second lastname.");
+        String segundoApellidoAutor1 = scanner.nextLine();
+
+        System.out.println("Update phone.");
+        String telefonoDeContacto = scanner.nextLine();
+
+
+
+
+        boolean Autorupdate = this.userUpdate(AutorId, nombreAutor1, primerApellidoAutor1, segundoApellidoAutor1, telefonoDeContacto );
+        if (Autorupdate) {
+            System.out.println("\nAutor updated with Id: " + AutorId);
+        } else {
+            System.out.println("\nWe cannot update the Author since there is other Author" +
+                    " with the specified id: " + AutorId);
+        }
+    }
+
+
+
+
 
 
 }
