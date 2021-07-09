@@ -1,4 +1,6 @@
 package uh.ac.cr;
 
-public class BookManager {
-}
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class BookManager {}

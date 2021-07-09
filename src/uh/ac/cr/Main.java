@@ -51,12 +51,12 @@ public class Main {
                                 case 1: {
                                     int AutorId;
                                     System.out.println("Create a new autor.");
-                                    System.out.println("Insert the identification of the autor.");
+                                    System.out.println("Inserte the identification of the autor.");
                                     AutorId = scanner.nextInt();
 
 
                                     String nombreAutor;
-                                    System.out.println("Insert the name of the autor.");
+                                    System.out.println("Inserte the name of the autor.");
                                     scanner.nextLine();
                                     nombreAutor = scanner.nextLine();
 
