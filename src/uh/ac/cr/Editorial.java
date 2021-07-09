@@ -14,6 +14,16 @@ public class Editorial {
         this.phone = phone;
     }
 
+    @Override
+    public String toString() {
+        return "Editorial{" +
+                "Id=" + Id +
+                ", Name='" + Name + '\'' +
+                ", Lacation='" + Lacation + '\'' +
+                ", phone='" + phone + '\'' +
+                '}';
+    }
+
     public int getId() {
         return Id;
     }

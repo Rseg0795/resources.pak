@@ -22,6 +22,18 @@ public class Book {
 
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Id=" + Id +
+                ", Author=" + Author +
+                ", Edicion=" + Edicion +
+                ", Title='" + Title + '\'' +
+                ", Editorial=" + Editorial +
+                ", copias=" + copias +
+                '}';
+    }
+
     public int getId() {
         return Id;
     }

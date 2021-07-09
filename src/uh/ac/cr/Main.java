@@ -15,6 +15,7 @@ public class Main {
         ArrayList<Book> listaLibros = new ArrayList<>();
         ArrayList<Editorial> listaEditorial = new ArrayList<>();
 
+
         //Managers
         AuthorManager administradorAutor = new AuthorManager(listaAutores);
         BookManager administradorLibros = new BookManager(listaLibros);
@@ -79,6 +80,30 @@ public class Main {
                                 }
                             }
                             break;
+                        case 2:{
+                            System.out.println("\nCatàlogo de editorial.");
+                            System.out.println("1-Ingresar una nueva editorial.");
+                            System.out.println("2-Consultar datos de una editorial.");
+                            System.out.println("3-Eliminar una editorial.");
+
+                            Option = scanner.nextInt();
+                            switch (Option){
+                                case 1:{
+                                    administradorEditorial.EditorialGenerator();
+                                    break;
+                                }
+                                case 2:{
+                                    administradorEditorial.EditorialShower();
+                                    break;
+                                }
+                                case 3:{
+                                    administradorEditorial.EditorialDeleter();
+                                    break;
+                                }
+                            }
+                            break;
+
+                        }
                         case 3: {
                             System.out.println("\n---------------------------------------------------------------------\n");
                             System.out.println("\nCatàlogo de libro.");
@@ -87,11 +112,15 @@ public class Main {
                             System.out.println("3-Eliminar un libro.");
                             Option = scanner.nextInt();
                             switch (Option) {
-                                case 1: {
-                                    administradorLibros.BookCreator(administradorAutor);
+                                case 1:
+                                    administradorLibros.BookCreator(administradorAutor, administradorEditorial);
                                     break;
-                                }
-
+                                case 2:
+                                    administradorLibros.BookFinder();
+                                    break;
+                                case 3:
+                                    administradorLibros.BookDeleter();
+                                    break;
                             }
                             break;
 
