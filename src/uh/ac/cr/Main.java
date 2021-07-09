@@ -1,12 +1,8 @@
 package uh.ac.cr;
 //Andres Chaves Soley, Ricardo Arias Segnini
-import uh.ac.cr.Author;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -26,7 +22,6 @@ public class Main {
 
         boolean exit = false;
         int Option;
-        int Option1;
         while (!exit) {
             System.out.println("\n---------------------------------------------------------------------\n");
 
@@ -38,103 +33,99 @@ public class Main {
 
             Option = scanner.nextInt();
             switch (Option) {
-                case 1:
-                    System.out.println("\n---------------------------------------------------------------------\n");
-                    System.out.println("1 = Administrar catalogos autores.");
-                    System.out.println("2 = Administrar catalogos editoriales.");
-                    System.out.println("3 = Administrar catalogos libros.");
-                    System.out.println("4 = Administrar catalogos usuarios.");
+                case 1: {
+                    System.out.println("\n---------------------------------------------------------------------");
+                    System.out.println("Catàlogo de autor.");
+                    System.out.println("1-Ingresar un nuevo autor.");
+                    System.out.println("2-Consultar datos de un autor.");
+                    System.out.println("3-Actualizar datos de un autor.");
+                    System.out.println("4-Eliminar un autor.");
 
-                    Option = scanner.nextInt();
-
-                    switch (Option) {
-                        case 1:
-
-                            System.out.println("\n---------------------------------------------------------------------\n");
-                            System.out.println("\nCatàlogo de autor.");
-                            System.out.println("1-Ingresar un nuevo autor.");
-                            System.out.println("2-Consultar datos de un autor.");
-                            System.out.println("3-Actualizar datos de un autor.");
-                            System.out.println("4-Eliminar un autor.");
-
-                            Option = scanner.nextInt();
-
-                            switch (Option) {
-                                case 1: {
-                                    administradorAutor.AuthorCreator();
-                                    break;
-                                }
-                                case 2: {
-                                    //Get data from a specific Autor.
-                                    administradorAutor.AuthorFinder();
-                                    break;
-                                }
-                                case 3: {
-                                    //Update data related to a specific patient.
-                                    administradorAutor.AuthorUpdater();
-                                    break;
-                                }
-                                case 4: {
-                                    administradorAutor.AuthorDeleter();
-                                    break;
-                                }
-                            }
-                            break;
-                        case 2:{
-                            System.out.println("\nCatàlogo de editorial.");
-                            System.out.println("1-Ingresar una nueva editorial.");
-                            System.out.println("2-Consultar datos de una editorial.");
-                            System.out.println("3-Eliminar una editorial.");
-
-                            Option = scanner.nextInt();
-                            switch (Option){
-                                case 1:{
-                                    administradorEditorial.EditorialGenerator();
-                                    break;
-                                }
-                                case 2:{
-                                    administradorEditorial.EditorialShower();
-                                    break;
-                                }
-                                case 3:{
-                                    administradorEditorial.EditorialDeleter();
-                                    break;
-                                }
-                            }
-                            break;
-
-                        }
-                        case 3: {
-                            System.out.println("\n---------------------------------------------------------------------\n");
-                            System.out.println("\nCatàlogo de libro.");
-                            System.out.println("1-Ingresar un nuevo libro.");
-                            System.out.println("2-Consultar datos de un libro.");
-                            System.out.println("3-Eliminar un libro.");
-                            Option = scanner.nextInt();
-                            switch (Option) {
-                                case 1:
-                                    administradorLibros.BookCreator(administradorAutor, administradorEditorial);
-                                    break;
-                                case 2:
-                                    administradorLibros.BookFinder();
-                                    break;
-                                case 3:
-                                    administradorLibros.BookDeleter();
-                                    break;
-                            }
-                            break;
-
-
-                        }
-                        //System.out.println("Option selected: " + Option);
-
-/*
-
-                    System.out.println("\nCatàlogo de editorial.");
+                    System.out.println("\n---------------------------------------------------------------------");
+                    System.out.println("Catàlogo de editorial.");
                     System.out.println("5-Ingresar una nueva editorial.");
                     System.out.println("6-Consultar datos de una editorial.");
                     System.out.println("7-Eliminar una editorial.");
 
+                    System.out.println("\n---------------------------------------------------------------------");
+                    System.out.println("Catàlogo de libro.");
+                    System.out.println("8-Ingresar un nuevo libro.");
+                    System.out.println("9-Consultar datos de un libro.");
+                    System.out.println("10-Eliminar un libro.");
+
+                    System.out.println("\n---------------------------------------------------------------------");
+                    System.out.println("Catàlogo de usuario.");
+                    System.out.println("11-Ingresar un nuevo usuario.");
+                    System.out.println("12-Consultar datos de un usuario");
+                    System.out.println("13-Actualizar datos de un usuario.");
+                    System.out.println("14-Eliminar un usuario.");
+
+                    System.out.println("\n---------------------------------------------------------------------");
+                    System.out.println("Volver al menù principal");
+                    System.out.println("15-Salir del administrador de catálogos.");
+
+                    Option = scanner.nextInt();
+
+                    switch (Option) {
+
+
+                        case 1: {
+                            administradorAutor.AuthorCreator();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 2: {
+                            //Get data from a specific Autor.
+                            administradorAutor.AuthorFinder();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 3: {
+                            //Update data related to a specific patient.
+                            administradorAutor.AuthorUpdater();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 4: {
+                            administradorAutor.AuthorDeleter();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 5: {
+                            administradorEditorial.EditorialGenerator();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 6: {
+                            administradorEditorial.EditorialShower();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 7: {
+                            administradorEditorial.EditorialDeleter();
+                            Utils.pressEnterToContinue();
+                            break;
+                        }
+                        case 8:
+                            administradorLibros.BookCreator(administradorAutor, administradorEditorial);
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 9:
+                            administradorLibros.BookFinder();
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 10:
+                            administradorLibros.BookDeleter();
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 15: {
+                            break;
+                        }
+
+
+
+
+/*
 
 
                 System.out.println("\nCatàlogo de usuario.");
@@ -151,6 +142,13 @@ public class Main {
 */
 
                     }
+
+                }
+                case 5:{
+                    exit = true;
+                    break;
+                }
+
             }
         }
     }
