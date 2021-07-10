@@ -55,4 +55,15 @@ public class User {
     public void setTelefonoDeContacto(String telefonoDeContacto) {
         this.telefonoDeContacto = telefonoDeContacto;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "ID=" + ID +
+                ", nombreUsuario='" + nombreUsuario + '\'' +
+                ", primerApellidoUsuario='" + primerApellidoUsuario + '\'' +
+                ", segundoApellidoUsuario='" + segundoApellidoUsuario + '\'' +
+                ", telefonoDeContacto='" + telefonoDeContacto + '\'' +
+                '}';
+    }
 }

@@ -10,13 +10,13 @@ public class Main {
         ArrayList<Author> listaAutores = new ArrayList<>();
         ArrayList<Book> listaLibros = new ArrayList<>();
         ArrayList<Editorial> listaEditorial = new ArrayList<>();
-
+        ArrayList<User> UserList = new ArrayList<>();
 
         //Managers
         AuthorManager administradorAutor = new AuthorManager(listaAutores);
         BookManager administradorLibros = new BookManager(listaLibros);
         EditorialManeger administradorEditorial = new EditorialManeger(listaEditorial);
-
+        UserManager administradorUser = new UserManager(UserList);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -118,31 +118,31 @@ public class Main {
                             administradorLibros.BookDeleter();
                             Utils.pressEnterToContinue();
                             break;
-                        case 15: {
+                        case 11:
+                            administradorUser.UserGenerator();
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 12:
+                            administradorUser.UserShower();
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 13:
+                            administradorUser.userUpdater();
+                            Utils.pressEnterToContinue();
+                            break;
+                        case 14:
+                            administradorUser.UserDeleter();
+                            Utils.pressEnterToContinue();
+                            break;
+
+
+                            case 15: {
                             break;
                         }
-
-
-
-
-/*
-
-
-                System.out.println("\nCatàlogo de usuario.");
-                System.out.println("11-Ingresar un nuevo usuario.");
-                System.out.println("12-Consultar datos de un usuario");
-                System.out.println("13-Actualizar datos de un usuario.");
-                System.out.println("14-Eliminar un usuario.");
-
-                System.out.println("\nVolver al menù principal");
-                System.out.println("15-Salir del administrador de catálogos.");
-
-
-
-*/
+                        
 
                     }
-
+                    break;
                 }
                 case 5:{
                     exit = true;
