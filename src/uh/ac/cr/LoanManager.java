@@ -10,10 +10,7 @@ public class LoanManager {
     ArrayList<Editorial> listaEditorial = new ArrayList<>();
     ArrayList<User> UserList = new ArrayList<>();
 
-
-
-
-
+    
     private void addlistaLibros(Loan loan) {
         ArrayLoan.add(loan);
     }
@@ -21,6 +18,6 @@ public class LoanManager {
     public void realizarPrestamo(int idPersona, String codigoLibro, int fecha){
 
 
-        
+
 }}
 
