@@ -83,7 +83,7 @@ public class AuthorManager {
         if (autorcreado) {
             System.out.println("\nNew Autor created with Id: " + AutorId);
         } else {
-            System.out.println("\nWe cannot create the patient since there is other Autor" +
+            System.out.println("\nWe cannot create this Autor since there is other Autor" +
                     " with the specified id: " + AutorId);
         }
     }
