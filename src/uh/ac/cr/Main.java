@@ -11,12 +11,13 @@ public class Main {
         ArrayList<Book> listaLibros = new ArrayList<>();
         ArrayList<Editorial> listaEditorial = new ArrayList<>();
         ArrayList<User> UserList = new ArrayList<>();
-
+        ArrayList<Loan> ArrayLoan = new ArrayList<>();
         //Managers
         AuthorManager administradorAutor = new AuthorManager(listaAutores);
         BookManager administradorLibros = new BookManager(listaLibros);
         EditorialManeger administradorEditorial = new EditorialManeger(listaEditorial);
         UserManager administradorUser = new UserManager(UserList);
+        LoanManager LoanAdministrator = new LoanManager(ArrayLoan);
 
         Scanner scanner = new Scanner(System.in);
 
@@ -150,6 +151,39 @@ public class Main {
                 }
 
             }
+            switch (Option) {
+             case 1 : {
+                 LoanAdministrator.LoanAdministrator();
+                 Utils.pressEnterToContinue();
+                break;}
+
+                 case 2: {
+
+                     LoanAdministrator
+                     Utils.pressEnterToContinue();
+                     break;
+                 }
+                case 3:{
+
+                    Utils.pressEnterToContinue();
+                    break;
+                }
+
+                case 4:{
+
+                    Utils.pressEnterToContinue();
+                    break;
+                }
+
+
+
+
+                case 5:{
+                    exit = true;
+                    break;
+                }
+
         }
     }
 }
+    }

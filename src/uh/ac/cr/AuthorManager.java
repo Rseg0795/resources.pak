@@ -25,9 +25,7 @@ public class AuthorManager {
         listaAutores.add(author);
     }
 
-    //This method checks if there is any author with the same id as the one received as parameter.
-    //Return true if found any.
-    //Return false if not found any.
+
     private boolean existentesAutores(int id) {
         boolean found = false;
         int autorIterator = 0;
@@ -182,7 +180,7 @@ public class AuthorManager {
     public void setListaAutores(ArrayList<Author> listaAutores) {
         this.listaAutores = listaAutores;
     }
-};
+}
 
 
 
